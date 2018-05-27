@@ -1,26 +1,8 @@
-# @(#) $Tau: tdk/.travis.yml.am $
-
-## ------------------------------------------------------------------------- ##
-##                          T A U    P R O J E C T                           ##
-## ------------------------------------------------------------------------- ##
-##                                                                           ##
-##  Licensed under the Apache License, Version 2.0 (the "License");          ##
-##  you may not use this file except in compliance with the License.         ##
-##                                                                           ##
-##  You may obtain a copy of the License at:                                 ##
-##                                                                           ##
-##      http://www.apache.org/licenses/LICENSE-2.0                           ##
-##                                                                           ##
-##  Unless required by applicable law or agreed to in writing, software      ##
-##  distributed under the License is distributed on an "AS-IS" BASIS,        ##
-##  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. ##
-##  See the License for the specific language governing permissions and      ##
-##  limitations under the License.                                           ##
-##                                                                           ##
-## ------------------------------------------------------------------------- ##
-
 sudo: required
 before_install:
-  - scripts/ci/before_install
+- scripts/ci/before_install
 script:
-  - scripts/ci/build
+- scripts/ci/build
+notifications:
+  slack:
+    secure: MVW1XsSgowPRCun47TwYZkUufIKKfcGDCb7xrOxtQX3oCeEakIhfP4rrMqDFTHBXJR8+SbWxLF9YOcEuDNS6PgPe15ZMkZddDm4mJbJqSNfqYVoqteqcJoBzBkwiE58kLqLNqRjuJu4P1F824B12IR1LlF6detI0fiwNRhwqjUTspAzEPVFm3sTgwPk9nT81dbKFABL1eIpl0boqpLmMVNwMtpwr19GVf7bW2KH6SBWYSh9g674h+S+JoWTxQHjq1hE4RIc4tqsxLO3Ino8ijJAMF2GsI7srFb2AEcD98nN3RAS2jKXrN5z9yig8YbtqwpSzuJDiIYL4cpJeqMGFMQbPpVkWbkbUP/5BKSc+GawdRVsTf5GS663tkfepodzEPzbfFpKWfcD7zhi7++I167INQgRKQAd8gEPG06LmcrO1KbkQ7hTbGIeA2SKxDwR8UxvN9xYJEKLyHAz39dJXkddGM50473Y+jquxTUdieXmARM0G+OBqVmKAhXqGy/hNAg3HkFa+IEI47nSVS9g+Y8o7lFg6OtshYXHKoLAHqAWb5agh7KXvvn8j16wDYuyO8L4tz07CKRH8U4fQpmO8ms712uiPUeeinioKYfOl5DfhCPMHedq70DYkINeyyimn+LBlKfI45NzyC80U3op+9XzvD6RIVweqAnT8mF9RdSQ=
