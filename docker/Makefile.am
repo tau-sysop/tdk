@@ -24,3 +24,4 @@ SUBDIRS = core grpc tdk
 am__extra_recursive_targets = push-recursive
 
 push: push-recursive
+push-am:
