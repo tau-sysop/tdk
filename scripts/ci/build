@@ -22,8 +22,8 @@
 
 set -e
 
-if ! test x"$DOCKER_USERNAME" = x"" ; then
-	echo ${DOCKER_PASSWORD} | docker login -username="$DOCKER_USERNAME" --password-stdin
+if ! test x"${DOCKER_USERNAME}" = x"" ; then
+	echo ${DOCKER_PASSWORD} | docker login --username="${DOCKER_USERNAME}" --password-stdin
 fi
 
 autoreconf -fi
