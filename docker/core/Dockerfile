@@ -22,3 +22,13 @@
 FROM debian:stretch-slim
 
 WORKDIR /root
+
+ENV CONTAINER docker
+ENV LC_ALL C
+ENV DEBIAN_FRONTEND noninteractive
+RUN echo 'APT::Install-Recommends "0"; \n\
+APT::Get::Assume-Yes "true"; \n\
+APT::Get::Force-Yes "true"; \n\
+APT::Install-Suggests "0";' > /etc/apt/apt.conf.d/01tau
+
+ONBUILD RUN apt-get update -qq
