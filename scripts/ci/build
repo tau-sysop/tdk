@@ -26,8 +26,9 @@ if ! test x"${DOCKER_USERNAME}" = x"" ; then
 	echo ${DOCKER_PASSWORD} | docker login --username="${DOCKER_USERNAME}" --password-stdin
 fi
 
+grpc_release=$(curl -L https://grpc.io/release)
 autoreconf -fi
-./configure
+./configure --with-grpc-release="${grpc_release}"
 make
 
 if ! test x"$DOCKER_USERNAME" = x"" ; then

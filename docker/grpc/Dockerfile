@@ -22,14 +22,14 @@
 ## gRPC build image
 
 FROM tauproject/core:shimmer
+ARG GRPC_RELEASE=master
 
-RUN DEBIAN_FRONTEND=noninteractive \
-	apt-get update -qq -y && \
-	apt-get install -qq -y build-essential clang \
+RUN apt-get install -qq build-essential clang \
 		autoconf libtool pkg-config libgflags-dev libgtest-dev libc++-dev git \
-		curl
+		curl ca-certificates
+		
+RUN git clone -b $GRPC_RELEASE https://github.com/grpc/grpc
 
-RUN git clone -b $(curl -L https://grpc.io/release) https://github.com/grpc/grpc
 RUN cd grpc && \
 	git submodule update --init --recursive
 RUN cd grpc && \

@@ -30,7 +30,7 @@ if WITH_DOCKER
 all-local: container
 	
 container:
-	$(DOCKER) build -t $(IMAGENAME) $(srcdir)
+	$(DOCKER) build --build-arg GRPC_RELEASE='$(grpc_release)' -t $(IMAGENAME) $(srcdir)
 
 push: container
 

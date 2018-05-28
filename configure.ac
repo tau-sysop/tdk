@@ -32,6 +32,14 @@ AM_MAINTAINER_MODE
 AC_CHECK_PROG([DOCKER],[docker],[docker])
 AM_CONDITIONAL([WITH_DOCKER],[test x"$DOCKER" != x""])
 
+AC_MSG_CHECKING([which gRPC release to build])
+AC_ARG_WITH([grpc_release],[AS_HELP_STRING([--with-grpc-release=TAG],[specify the gRPC release tag or branch to clone within the gRPC build container])],[grpc_release=${withval}])
+if test x"$grpc_release" = x"" || test x"$grpc_release" = x"yes" || test x"$grpc_release" = x"no" ; then
+	grpc_release=master
+fi
+AC_SUBST([grpc_release])
+AC_MSG_RESULT([$grpc_release])
+
 AC_CONFIG_FILES([
 Makefile
 docker/Makefile
