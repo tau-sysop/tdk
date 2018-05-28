@@ -25,8 +25,8 @@ FROM tauproject/core:shimmer
 ARG GRPC_RELEASE=master
 
 RUN apt-get install -qq build-essential clang \
-		autoconf libtool pkg-config libgflags-dev libgtest-dev libc++-dev git \
-		curl ca-certificates
+		autoconf automake libtool pkg-config libgflags-dev libgtest-dev \
+		libc++-dev git curl ca-certificates
 		
 RUN git clone -b $GRPC_RELEASE https://github.com/grpc/grpc
 
