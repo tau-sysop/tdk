@@ -43,9 +43,8 @@ AC_MSG_RESULT([$grpc_release])
 AC_CONFIG_FILES([
 Makefile
 docker/Makefile
-docker/core/Makefile
 docker/grpc/Makefile
 docker/tdk/Makefile
 ])
-	
+
 AC_OUTPUT

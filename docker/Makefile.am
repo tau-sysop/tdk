@@ -19,7 +19,7 @@
 ##                                                                           ##
 ## ------------------------------------------------------------------------- ##
 
-SUBDIRS = core grpc tdk
+SUBDIRS = grpc tdk
 
 am__extra_recursive_targets = push-recursive
 
